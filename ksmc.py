@@ -30,6 +30,9 @@ if len(sys.argv) > 1:
 else:
     inout = 'prog01'
 
+if len(inout) > 4 and inout[-4] == '.':
+    inout = inout[:-4]
+
 inname  = inout + '.smt'     # state machine program text
 outname = inout + '.smb'     # state machine program binary
 logname = inout + '.sml'     # state machine log file
@@ -37,8 +40,8 @@ logname = inout + '.sml'     # state machine log file
 logger.remove()
 logger.add(logname)
 
-print(f"Files: {inname=}, {outname=}, {logname=}")
-logger.info(f"Files: {inname=}, {outname=}, {logname=}")
+print(f"Files: {inout=}, {inname=}, {outname=}, {logname=}")
+logger.info(f"Files: {inout=}, {inname=}, {outname=}, {logname=}")
 
 HEADLEN = 4                  # length of code file header
 

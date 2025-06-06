@@ -27,14 +27,17 @@ if len(sys.argv) > 1:
 else:
     inout = 'prog01'
 
+if len(inout) > 4 and inout[-4] == '.':
+    inout = inout[:-4]
+    
 inname  = inout + '.smb'     # state machine program binary
 decname = inout + '.smd'     # state machine program decomplied
 logname = inout + '.sml'     # state machine log file
 
 logger.add(logname)
 
-print(f"Files: {inname=}, {decname=}, {logname=}")
-logger.info(f"Files: {inname=}, {decname=}, {logname=}")
+print(f"Files: {inout=}, {inname=}, {decname=}, {logname=}")
+logger.info(f"Files: {inout=}, {inname=}, {decname=}, {logname=}")
 
 HEADLEN = 4                  # length of code file header
 

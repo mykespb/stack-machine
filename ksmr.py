@@ -28,6 +28,9 @@ if len(sys.argv) > 1:
 else:
     inout = 'prog01'
 
+if len(inout) > 4 and inout[-4] == '.':
+    inout = inout[:-4]
+
 inname  = inout + '.smb'     # state machine program text
 logname = inout + '.sml'     # state machine program log
 outname = inout + '.smo'     # state machine program output
@@ -36,8 +39,7 @@ logger.remove()
 logger.add(sys.stderr, level="WARNING")
 logger.add(logname, level="DEBUG")
 
-# print(f"Files: {inname=}, {outname=}, {logname=}")
-logger.info(f"Files: {inname=}, {outname=}, {logname=}")
+logger.info(f"Files: {inout=}, {inname=}, {outname=}, {logname=}")
 
 # --------------------------------------------------------------
 # error level:
@@ -171,6 +173,8 @@ logger.info(f"Writing log text to {logname}.")
 # run the code
 
 with open(outname, 'wt') as outfile:
+
+    # print(f"Files: {inout=}, {inname=}, {outname=}, {logname=}", file=outfile)
 
     # icode = -1
     icode = HEADLEN - 1
@@ -508,6 +512,7 @@ with open(outname, 'wt') as outfile:
                     
                 case _:
                     print(f"\nValue error: illegal code {cf[icode]=} @ {icode=}, {ds=}, {rs=}")
+                    print(f"\nValue error: illegal code {cf[icode]=} @ {icode=}, {ds=}, {rs=}", file=outfile)
                     logger.error(f"Value error: illegal code {cf[icode]=} @ {icode=}, {ds=}, {rs=}")
                     raise ValueError
             
@@ -516,6 +521,7 @@ with open(outname, 'wt') as outfile:
         
     except AssertionError as e:
         print(f"Assertion failed: {e}")
+        print(f"Assertion failed: {e}", file=outfile)
         logger.error(f"Assertion failed: {e}")
                 
 # print("\nJob done.\n")
