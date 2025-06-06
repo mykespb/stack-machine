@@ -477,7 +477,7 @@ with open(outname, 'wt') as outfile:
                     check_ds(0)
                     ds.append(CODE_SPACE)
                     
-                case 72: # 72  string  1   put Hollerite string address to DS0
+                case 72: # 72  string  1   put Hollerith string address to DS0
                     check_ds(0)
                     ds.append(icode+1)
                     icode += cf[icode+1] + 1
