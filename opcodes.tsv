@@ -42,7 +42,7 @@ code	name	bytes	description
 68	printstr	1	print string from DS0
 70	char	2	put char code to DS0
 71	space	1	put space code to DS0
-72	string	1	put Hollerite string address to DS0
+72	string	1	put Hollerith string address to DS0
 73	byte	2	load number 0.255 to DS
 74	number	3	load number -32768..32767
 75	addr	3	load address of label
