@@ -13,8 +13,8 @@ Stack machine simulation
 Работаем на python 3.13.
 
 Используются библиотеки:
-https://github.com/Delgan/loguru
+- https://github.com/Delgan/loguru
 
 Используется инструментарий:
-uv
-git
+- uv
+- git
