@@ -73,13 +73,13 @@ CSlen   =   255     # control structures nesting
 # service functions
 
 def check_ds(n: int) -> None:
-    """check if DS has at east n elements and it not full"""
+    """check if DS has at least n elements and it not full"""
     
     assert len(ds) < DSlen, "DS overflow"
     assert len(ds) >= n, "DS underflow"
 
 def check_rs(n: int) -> None:
-    """check if RS has at east n elements and it not full"""
+    """check if RS has at least n elements and it not full"""
     
     assert len(rs) < RSlen, "RS overflow"
     assert len(rs) >= n, "RS underflow"
