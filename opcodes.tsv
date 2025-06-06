@@ -1,0 +1,48 @@
+code	name	bytes	description
+0	noop	1	no actions
+1	stop	1	stop program
+2	end	1	end of code
+10	dsrs	1	move DS0 to RS0
+11	rsds	1	move RS0 to DS0
+12	dup	1	copy DS
+13	drop	1	drop DS
+14	rot	1	move DS0@ to DS
+15	over	1	DS0@ to DS
+16	swap	1	swap DS1, DS0
+20	neg	1	change sign of DS0
+21	add	1	DS1 + DS0
+22	sub	1	DS1 - DS0
+23	mul	1	DS1 * DS0
+24	div	1	DS1 / DS0
+25	mod	1	DS1 % DS0
+26	not	1	negate !DS0
+27	random	1	random number to DS0
+30	jump	3	goto label
+31	jeq	3	jump if DS0 == 0
+32	jne	3	jump if DS0 != 0
+33	jge	3	jump if DS0 >= 0
+34	jgt	3	jump if DS0 > 0
+35	jle	3	jump if DS0 <= 0
+36	jlt	3	jump if DS0 < 0
+37	jof	3	jump if flag 'overflow' is set
+38	jef	3	jump if flag 'erro' is set
+40	calld	3	call subroutine dirctly by label
+41	calli	1	call subroutine indirectly from DS0
+42	return	1	return from subroutine
+50	fetch	1	get value from memory
+51	store	1	put value to memory
+60	printnum	1	print number
+61	printchar	1	print character
+62	println	1	print newline
+63	show	1	show system data
+64	dump	1	dump system data
+65	wait	1	wait for enter key
+66	inputnum	1	wait for user input, get number
+67	inputchar	1	wait for user input, get character
+68	printstr	1	print string from DS0
+70	char	2	put char code to DS0
+71	space	1	put space code to DS0
+72	string	1	put Hollerite string address to DS0
+73	byte	2	load number 0.255 to DS
+74	number	3	load number -32768..32767
+75	addr	3	load address of label
