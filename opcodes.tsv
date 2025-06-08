@@ -25,7 +25,7 @@ code	name	bytes	description
 35	jle	3	jump if DS0 <= 0
 36	jlt	3	jump if DS0 < 0
 37	jof	3	jump if flag 'overflow' is set
-38	jef	3	jump if flag 'erro' is set
+38	jef	3	jump if flag 'error' is set
 40	calld	3	call subroutine dirctly by label
 41	calli	1	call subroutine indirectly from DS0
 42	return	1	return from subroutine
